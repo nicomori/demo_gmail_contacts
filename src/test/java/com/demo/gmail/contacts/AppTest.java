@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 /**
- * Unit test for simple App . dddd.
+ * Unit test for simple App . dddd.yyyyyy
  */
 @CucumberOptions(plugin = { "html:target/cucumber-html-reports", "json:target/cucumber-html-reports/cucumber.json",
 		"junit:target/surefire-reports/cucumber-junit.xml" }, features = "src/test/resources/features", tags = "@pepe2", glue = {
