@@ -1,7 +1,7 @@
 @Regression @createANewContact
 Feature: Interview Nicolas Mori sssss
 
-Scenario Outline: Access to the app after make the login.
+Scenario Outline: Access to the app after make the login.2222
 
 Given I start the browser and access to this "<url>"
 And I set my user with this email "<email>" and press in the button next
