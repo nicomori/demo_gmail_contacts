@@ -18,10 +18,6 @@ node {
           [expressionType: 'JSONPath', key: 'branch_name', value: 'ref']
 
 
-          [expressionType: 'JSONPath', key: 'nombre_variable', value: 'este33334']
-
-
-
           
         ],
         regexpFilterText: '',
