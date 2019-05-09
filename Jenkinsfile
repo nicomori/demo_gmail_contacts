@@ -10,12 +10,19 @@ node {
     pipelineTriggers([
       [$class: 'GenericTrigger',
         genericVariables: [
-          [expressionType: 'JSONPath', key: 'repository', value: 'https://github.com/nicomori/demo_gmail_contacts'],
+          [expressionType: 'JSONPath', key: 'repository', value: '$.repository'],
           [expressionType: 'JSONPath', key: 'organization', value: '$.organization'],
           [expressionType: 'JSONPath', key: 'sender', value: '$.sender'],
           [expressionType: 'JSONPath', key: 'ref_type', value: '$.ref_type'],
-          [expressionType: 'JSONPath', key: 'master_branch', value: 'master'],
-          [expressionType: 'JSONPath', key: 'branch_name', value: 'master']
+          [expressionType: 'JSONPath', key: 'master_branch', value: '$.master_branch'],
+          [expressionType: 'JSONPath', key: 'branch_name', value: 'ref']
+
+
+          [expressionType: 'JSONPath', key: 'nombre_variable', value: 'este es el valor de la nombre_variable']
+
+
+
+          
         ],
         regexpFilterText: '',
         regexpFilterExpression: ''
@@ -63,7 +70,22 @@ node {
     sh(name: "Skip", script: 'echo "${branch_name}"')
     
     sh(name: "Skip", script: 'echo "Move along, 33333333"')
-    sh(name: "Skip", script: 'echo "${master_branch}"')
+    sh(name: "Skip", script: 'echo ${master_branch}"')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333bbbb"')
+    sh(name: "Skip", script: 'echo "${nombre_variable}"')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333ccccccc"')
+    sh(name: "Skip", script: 'echo ${nombre_variable}')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333dddddddddd"')
+    sh(name: "Skip", script: 'echo $nombre_variable')
+
+
+
+
+
+
     
     sh(name: "Skip", script: 'echo "Move along, 4444444"')
     sh(name: "Skip", script: 'echo "Move along, nothing to see here"')
@@ -83,7 +105,9 @@ node {
 
 
     if(env.branch_name && "${branch_name}" == "${master_branch}") {
-        sh(name: "Skip", script: 'echo "GGGGGGGGGGGGGGGGGG"')
+
+
+        sh(name: "Skip", script: 'echo "GGGGGGGGGGGGGGGGGGGGGGGG"')
 
 
         withCredentials([string(credentialsId: 'cc2c56dc-4217-4224-9191-ce1239970618', variable: 'githubToken')]) {
