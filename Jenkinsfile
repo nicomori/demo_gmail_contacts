@@ -10,12 +10,12 @@ node {
     pipelineTriggers([
       [$class: 'GenericTrigger',
         genericVariables: [
-          [expressionType: 'JSONPath', key: 'repository', value: '$.repository'],
+          [expressionType: 'JSONPath', key: 'repository', value: 'https://github.com/nicomori/demo_gmail_contacts'],
           [expressionType: 'JSONPath', key: 'organization', value: '$.organization'],
           [expressionType: 'JSONPath', key: 'sender', value: '$.sender'],
           [expressionType: 'JSONPath', key: 'ref_type', value: '$.ref_type'],
-          [expressionType: 'JSONPath', key: 'master_branch', value: '$.master_branch'],
-          [expressionType: 'JSONPath', key: 'branch_name', value: 'ref']
+          [expressionType: 'JSONPath', key: 'master_branch', value: 'master'],
+          [expressionType: 'JSONPath', key: 'branch_name', value: 'master']
         ],
         regexpFilterText: '',
         regexpFilterExpression: ''
@@ -83,6 +83,9 @@ node {
 
 
     if(env.branch_name && "${branch_name}" == "${master_branch}") {
+        sh(name: "Skip", script: 'echo "GGGGGGGGGGGGGGGGGG"')
+
+
         withCredentials([string(credentialsId: 'cc2c56dc-4217-4224-9191-ce1239970618', variable: 'githubToken')]) {
           httpRequest(
               contentType: 'APPLICATION_JSON',
