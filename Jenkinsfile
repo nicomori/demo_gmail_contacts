@@ -33,7 +33,7 @@ node {
       "required_pull_request_reviews": {
         "dismissal_restrictions": {
           "users": [
-            "hollyw0od",
+            "nicomori",
             "primetheus"
           ],
           "teams": [
@@ -45,7 +45,7 @@ node {
       },
       "restrictions": {
         "users": [
-          "hollyw0od",
+          "nicomori",
           "primetheus"
         ],
         "teams": [
@@ -56,7 +56,7 @@ node {
 
   stage("Protect Master Branch") {
     if(env.branch_name && "${branch_name}" == "${master_branch}") {
-        withCredentials([string(credentialsId: '1cf07897-ad01-4e59-9975-617ea40cf111', variable: 'githubToken')]) {
+        withCredentials([string(credentialsId: 'cc2c56dc-4217-4224-9191-ce1239970618', variable: 'githubToken')]) {
           httpRequest(
               contentType: 'APPLICATION_JSON',
               consoleLogResponseBody: true,
