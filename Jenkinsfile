@@ -75,12 +75,6 @@ node {
     sh(name: "Skip", script: 'echo "Move along, 33333333bbbb"')
     sh(name: "Skip", script: 'echo "${nombre_variable}"')
 
-    sh(name: "Skip", script: 'echo "Move along, 33333333ccccccc"')
-    sh(name: "Skip", script: 'echo ${nombre_variable}')
-
-    sh(name: "Skip", script: 'echo "Move along, 33333333dddddddddd"')
-    sh(name: "Skip", script: 'echo $nombre_variable')
-
 
 
 
