@@ -70,10 +70,16 @@ node {
     sh(name: "Skip", script: 'echo "${branch_name}"')
     
     sh(name: "Skip", script: 'echo "Move along, 33333333"')
-    sh(name: "Skip", script: 'echo ${master_branch}"')
+    sh(name: "Skip", script: 'echo "${master_branch}"')
 
     sh(name: "Skip", script: 'echo "Move along, 33333333bbbb"')
     sh(name: "Skip", script: 'echo "${nombre_variable}"')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333ccccccc"')
+    sh(name: "Skip", script: 'echo ${nombre_variable}')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333dddddddddd"')
+    sh(name: "Skip", script: 'echo nombre_variable')
 
 
 
