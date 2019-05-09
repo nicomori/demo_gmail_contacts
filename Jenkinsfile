@@ -18,7 +18,7 @@ node {
           [expressionType: 'JSONPath', key: 'branch_name', value: 'ref']
 
 
-          [expressionType: 'JSONPath', key: 'nombre_variable', value: 'este es el valor de la nombre_variable']
+          [expressionType: 'JSONPath', key: 'nombre_variable', value: 'este33334']
 
 
 
@@ -71,6 +71,16 @@ node {
     
     sh(name: "Skip", script: 'echo "Move along, 33333333"')
     sh(name: "Skip", script: 'echo "${master_branch}"')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333bbbb"')
+    sh(name: "Skip", script: 'echo "${nombre_variable}"')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333ccccccc"')
+    sh(name: "Skip", script: 'echo ${nombre_variable}')
+
+    sh(name: "Skip", script: 'echo "Move along, 33333333dddddddddd"')
+    sh(name: "Skip", script: 'echo nombre_variable')
+
 
 
 
