@@ -5,7 +5,7 @@ node {
         artifactDaysToKeepStr: '',
         artifactNumToKeepStr: '',
         daysToKeepStr: '',
-        numToKeepStr: '5']
+        numToKeepStr: '20']
     ],
     pipelineTriggers([
       [$class: 'GenericTrigger',
@@ -59,9 +59,11 @@ node {
 
     sh "ls"
 
-    sh "echo "${branch_name}""
+    sh ls
 
-    sh "pwd"
+    sh 'ls'
+
+    sh 'echo "${branch_name}"'
 
 
     sh(name: "Skip", script: 'echo "Move along, 111111111"')
