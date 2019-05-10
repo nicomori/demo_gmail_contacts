@@ -57,10 +57,6 @@ node {
   stage("Protect Master Branch") {
 
 
-    sh "ls"
-
-    sh ls
-
     sh 'ls'
 
     sh 'echo "${branch_name}"'
