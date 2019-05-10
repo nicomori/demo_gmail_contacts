@@ -16,9 +16,6 @@ node {
           [expressionType: 'JSONPath', key: 'ref_type', value: '$.ref_type'],
           [expressionType: 'JSONPath', key: 'master_branch', value: '$.master_branch'],
           [expressionType: 'JSONPath', key: 'branch_name', value: 'ref']
-
-
-          
         ],
         regexpFilterText: '',
         regexpFilterExpression: ''
@@ -67,21 +64,6 @@ node {
     
     sh(name: "Skip", script: 'echo "Move along, 33333333"')
     sh(name: "Skip", script: 'echo "${master_branch}"')
-
-    sh(name: "Skip", script: 'echo "Move along, 33333333bbbb"')
-    sh(name: "Skip", script: 'echo "${nombre_variable}"')
-
-    sh(name: "Skip", script: 'echo "Move along, 33333333ccccccc"')
-    sh(name: "Skip", script: 'echo ${nombre_variable}')
-
-    sh(name: "Skip", script: 'echo "Move along, 33333333dddddddddd"')
-    sh(name: "Skip", script: 'echo nombre_variable')
-
-
-
-
-
-
     
     sh(name: "Skip", script: 'echo "Move along, 4444444"')
     sh(name: "Skip", script: 'echo "Move along, nothing to see here"')
