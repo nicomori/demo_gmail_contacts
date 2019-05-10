@@ -5,7 +5,7 @@ node {
         artifactDaysToKeepStr: '',
         artifactNumToKeepStr: '',
         daysToKeepStr: '',
-        numToKeepStr: '5']
+        numToKeepStr: '20']
     ],
     pipelineTriggers([
       [$class: 'GenericTrigger',
