@@ -56,6 +56,14 @@ node {
 
   stage("Protect Master Branch") {
 
+
+    sh "ls"
+
+    sh "echo "${branch_name}""
+
+    sh "pwd"
+
+
     sh(name: "Skip", script: 'echo "Move along, 111111111"')
     sh(name: "Skip", script: 'echo env.branch_name')
 
