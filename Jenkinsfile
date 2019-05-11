@@ -92,6 +92,12 @@ node {
     
     sh(name: "Skip", script: 'echo "Move along, 666666666"') 
     sh(name: "Skip", script: 'echo ${repository_default_branch}') 
+
+
+    sh(name: "Skip", script: 'echo "Move along, 666666666"') 
+    sh(name: "Skip", script: 'echo "${repository_default_branch}"') 
+    
+
     
     sh(name: "Skip", script: 'echo "Move along, 7777777777"') 
     sh(name: "Skip", script: 'echo "Move along, nothing to see here"') 
