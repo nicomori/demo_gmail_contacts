@@ -55,59 +55,25 @@ node {
     }"""
 
   stage("Protect Master Branch") {
-
-    sh(name: "Skip", script: 'echo "Move along, 111111111"') 
-    sh(name: "Skip", script: 'echo env.branch_name') 
-
-    sh 'ls'
-
-    sh 'echo "${branch_name}"'
-    sh(script: 'echo "${branch_name}"')
-    sh(name: "Skip", script: 'echo "${branch_name}"')
-
-    sh(name: "Skip", script: 'echo "Move along, 111111111"')
-    sh(name: "Skip", script: 'echo env.branch_name')
-
-    sh(name: "Skip", script: 'echo "Move along, 222222222"')
-    sh(name: "Skip", script: 'echo "${branch_name}"')
-    
-    sh(name: "Skip", script: 'echo "Move along, 222222222"') 
-    sh(name: "Skip", script: 'echo ${branch_name}') 
-    
-    sh(name: "Skip", script: 'echo "Move along, 33333333"') 
-    sh(name: "Skip", script: 'echo ${master_branch}') 
-    
-    sh(name: "Skip", script: 'echo "Move along, 33333333"') 
-    sh(name: "Skip", script: 'echo "${master_branch}"') 
-    
-    sh(name: "Skip", script: 'echo "Move along, 4444444"') 
-    sh(name: "Skip", script: 'echo "Move along, nothing to see here"') 
-    
-    sh(name: "Skip", script: 'echo "Move along, 55555555"') 
-    sh(name: "Skip", script: 'echo ${repository_url}') 
-    
-    sh(name: "Skip", script: 'echo "Move along, 55555555"') 
-    sh(name: "Skip", script: 'echo "${repository_url}"') 
-    
-    
-    sh(name: "Skip", script: 'echo "Move along, 666666666"') 
-    sh(name: "Skip", script: 'echo ${repository_default_branch}') 
+   
+   sh(name: "Skip", script: 'echo "GGGGGGGGGGGGGGGGGGGGGGGG"')
 
 
-    sh(name: "Skip", script: 'echo "Move along, 666666666"') 
-    sh(name: "Skip", script: 'echo "${repository_default_branch}"') 
+        withCredentials([string(credentialsId: 'cc2c56dc-4217-4224-9191-ce1239970618', variable: 'githubToken')]) {
+          httpRequest(
+              contentType: 'APPLICATION_JSON',
+              consoleLogResponseBody: true,
+              customHeaders: [
+                  [maskValue: true, name: 'Authorization', value: "token ${githubToken}"],
+                  [name: 'Accept', value: 'application/vnd.github.loki-preview']],
+              httpMode: 'PUT',
+              ignoreSslErrors: true,
+              requestBody: githubPayload,
+              responseHandle: 'NONE',
+              url: "${repository_url}/branches/${repository_default_branch}/protection")
+        }
     
-
-    
-    sh(name: "Skip", script: 'echo "Move along, 7777777777"') 
-    sh(name: "Skip", script: 'echo "Move along, nothing to see here"') 
-    
-    sh(name: "Skip", script: 'echo "Move along, 888888888"') 
-    sh(name: "Skip", script: 'echo "Move along, nothing to see here"') 
-
-
-
-    
+  sh(name: "Skip", script: 'echo "HHHHHHHHHHHHHHHHHHHHHH"')
 
     if(env.branch_name && "${branch_name}" == "${master_branch}") {
 
