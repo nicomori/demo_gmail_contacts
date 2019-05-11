@@ -71,14 +71,14 @@ node {
     sh(name: "Skip", script: 'echo "Move along, 222222222"')
     sh(name: "Skip", script: 'echo "${branch_name}"')
     
-    sh(name: "Skip", script: 'echo "Move along, 33333333"')
-    sh(name: "Skip", script: 'echo '+"${master_branch}")
-
     sh(name: "Skip", script: 'echo "Move along, 222222222"') 
     sh(name: "Skip", script: 'echo ${branch_name}') 
     
     sh(name: "Skip", script: 'echo "Move along, 33333333"') 
     sh(name: "Skip", script: 'echo ${master_branch}') 
+    
+    sh(name: "Skip", script: 'echo "Move along, 33333333"') 
+    sh(name: "Skip", script: 'echo "${master_branch}""') 
     
     sh(name: "Skip", script: 'echo "Move along, 4444444"') 
     sh(name: "Skip", script: 'echo "Move along, nothing to see here"') 
@@ -86,9 +86,10 @@ node {
     sh(name: "Skip", script: 'echo "Move along, 55555555"') 
     sh(name: "Skip", script: 'echo ${repository_url}') 
     
-    sh(name: "Skip", script: 'echo "Move along, 666666666"')
-    sh(name: "Skip", script: 'echo '+"${repository_default_branch}")
-
+    sh(name: "Skip", script: 'echo "Move along, 55555555"') 
+    sh(name: "Skip", script: 'echo "${repository_url}"') 
+    
+    
     sh(name: "Skip", script: 'echo "Move along, 666666666"') 
     sh(name: "Skip", script: 'echo ${repository_default_branch}') 
     
