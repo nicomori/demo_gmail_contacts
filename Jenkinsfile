@@ -78,7 +78,7 @@ node {
     sh(name: "Skip", script: 'echo ${master_branch}') 
     
     sh(name: "Skip", script: 'echo "Move along, 33333333"') 
-    sh(name: "Skip", script: 'echo "${master_branch}""') 
+    sh(name: "Skip", script: 'echo "${master_branch}"') 
     
     sh(name: "Skip", script: 'echo "Move along, 4444444"') 
     sh(name: "Skip", script: 'echo "Move along, nothing to see here"') 
